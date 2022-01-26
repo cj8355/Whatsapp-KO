@@ -2,32 +2,33 @@
 import express from 'express';
 import mongoose from 'mongoose'
 import Messages from './dbMessages.js';
-import Pusher from "pusher";
-import Cors from 'cors';
+//import Pusher from "pusher";
+//import Cors from 'cors';
 
 //App Config
 const app = express();
 const port = process.env.port || 9000;
 
-const pusher = new Pusher({
-    appId: '1067105',
-    key: 'PLACEHERE///',
-    secrey: 'PLACEHERE',
-    cluster: 'PLACEHERE',
-    encrypted: true
-});
+//const pusher = new Pusher({
+//    appId: "1337486",
+//    key: "1512a27a1f9aea241a4b",
+ //   secret: "f8a58c2f17d86814fb6a",
+  //  cluster: "us3",
+//useTLS: true,
+  //  encrypted: true
+//});
 
 //Middleware
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
 
 //Database Config
-const connection_url = "TEMP MONGO DB srv"
+const connection_url = "mongodb+srv://MilesBeler:Thisispassword@cluster0.8tcf5.mongodb.net/Whatsappdb?retryWrites=true&w=majority"
 
 mongoose.connect(connection_url,{
- useCreateIndex: true,
- useNewUrlParser: true,
- useUnifiedTopology: true
+ //useCreateIndex: false,
+ //useNewUrlParser: true,
+ //useUnifiedTopology: true
 })
 
 const db = mongoose.connection
