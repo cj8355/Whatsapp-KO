@@ -36,7 +36,7 @@ changeStream.on("change", (change) => {
                 received: messageDetails.received,
             });
         } else {
-            console.log('error triggering pusher');
+            console.log('error');
         }
     });
 });
@@ -67,9 +67,3 @@ app.post('/messages/new', (req, res) => {
 })
 // Listen
 app.listen(port, () => console.log(`Listening on localhost:${port}`));
-
-// Test Heroku Deployment
-if (process.env.NODE_ENV === 'production') {
-    
-
-}
